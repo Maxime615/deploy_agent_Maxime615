@@ -22,5 +22,7 @@ attendance_tracker_{input}/
 └── reports/
     └── reports.log            # Target runtime activity output registry
 
+---
+
 ## Running the script 
 To run the script I used (`chmod +x setup_project.sh`) to make the script executable then afterwards I used (`./setup_project.sh`) to run the script
