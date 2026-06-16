@@ -1,10 +1,10 @@
-# Student Attendance Tracker Workspace Provisioner (Project Factory)
+# Student Attendance Tracker Workspace Provisioner
 
-## Project Overview
-In professional software engineering, manual environment configuration is a major bottleneck. This repository demonstrates the power of **Infrastructure as Code (IaC)** by replacing manual workflows with a robust "Project Factory" shell script (`setup_project.sh`). 
+## Project Overview 
+This repository demonstrates the power of **Infrastructure as Code (IaC)** by replacing manual workflows with a robust shell script (`setup_project.sh`). 
 
 By automating the scaffolding, configuration, and validation steps, this tool delivers three major operational advantages:
-* **Reproducibility:** Guarantees that every engineer and deployment server runs the exact same folder structure and core files.
+* **Reproducibility:** Guarantees that every deployment server runs the exact same folder structure and core files.
 * **Efficiency:** slashes an error-prone, 10-minute manual directory configuration down to a 2-second automated execution.
 * **Reliability:** Eliminates manual human mistakes, such as typographical errors in directory paths or missing environment templates.
 
