@@ -1,4 +1,4 @@
-# Student Attendance Tracker Workspace Provisioner
+# Student Attendance Tracker
 
 ## Project Overview 
 This repository demonstrates the power of **Infrastructure as Code (IaC)** by replacing manual workflows with a robust shell script (`setup_project.sh`). 
