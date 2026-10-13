@@ -34,7 +34,6 @@ elif '-r' in args:
     }
 fi
 
-
 cleanup_on_interrupt() {
     echo -e "\n\n[!] Interrupt detected! Packaging partial project..."
     if [ -n "$dir_folder" ] && [ -d "$dir_folder" ]; then
@@ -46,7 +45,6 @@ cleanup_on_interrupt() {
     fi
     exit 130
 }
-
 
 while true; do
     clear
@@ -68,14 +66,14 @@ while true; do
             echo "=== FEATURE 1: DEPLOY APPLICATION ==="
             
             # Pre-flight checks matching rubric recommendations
-            if ! command -v python3 >/dev/null 2>&1; then
-                echo "Python3 is required." >&2
+            if ! command -v python3 >/dev/null 2>&1 || ! python3 --version >/dev/null 2>&1; then
+                echo "ERROR: python3 is required and must be executable." >&2
                 read -rp "Press Enter to continue..."
                 continue
             fi
 
             if ! command -v zip >/dev/null 2>&1; then
-                echo "Zip is required." >&2
+                echo "ERROR: zip is required." >&2
                 read -rp "Press Enter to continue..."
                 continue
             fi
@@ -99,7 +97,7 @@ while true; do
 
             echo "Creating folders..."
             if ! mkdir -p "$dir_folder"/{Helpers,reports,archives/attendance,archives/absent}; then
-                echo "Failed to create project directories." >&2
+                echo "ERROR: Failed to create project directories." >&2
                 trap - SIGINT SIGTSTP
                 read -rp "Press Enter to continue..."
                 continue
@@ -133,7 +131,7 @@ while true; do
                 total_sessions_val=1
             else
                 if ! cp "$TEMPLATES_DIR/assets.csv" "$dir_folder/Helpers/"; then
-                    echo " Failed to copy assets.csv template." >&2
+                    echo "ERROR: Failed to copy assets.csv template." >&2
                     trap - SIGINT SIGTSTP
                     read -rp "Press Enter to continue..."
                     continue
@@ -174,7 +172,7 @@ json.dump(c, open(p, 'w'), indent=4)
             fi
 
             trap - SIGINT SIGTSTP
-            echo " Deployment completed in '$dir_folder'!"
+            echo "Deployment completed in '$dir_folder'!"
 
             read -rp "Verify deployment by running application now? [Y/n]: " vr
             [[ ! "$vr" =~ ^[Nn]$ ]] && (cd "$dir_folder" && python3 attendance_checker.py)
@@ -188,7 +186,7 @@ json.dump(c, open(p, 'w'), indent=4)
             echo "=== FEATURE 2: RUN APPLICATION ==="
             dirs=(attendance_tracker_*)
             if [ ! -d "${dirs[0]}" ]; then
-                echo " No deployed projects found. Run Feature 1 first." >&2
+                echo "ERROR: No deployed projects found. Run Feature 1 first." >&2
                 read -rp "Press Enter to continue..."
                 continue
             fi
@@ -204,7 +202,7 @@ json.dump(c, open(p, 'w'), indent=4)
             echo "=== FEATURE 3: ARCHIVE LOG FILES ==="
             dirs=(attendance_tracker_*)
             if [ ! -d "${dirs[0]}" ]; then
-                echo "No deployed projects found." >&2
+                echo "ERROR: No deployed projects found." >&2
                 read -rp "Press Enter to continue..."
                 continue
             fi
