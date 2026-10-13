@@ -38,3 +38,4 @@ A robust Master Deployment Agent built with Bash shell scripting to automate the
 3. Make sure the script has execution permissions:
    ```bash
    chmod +x deploy_agent.sh
+4. Run "./deploy_agent.sh"
