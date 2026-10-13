@@ -1,0 +1,11 @@
+=== Session recorded 2026-10-13 13:50:28.334897 | total_sessions=5 | mode=live ===
+[2026-10-13 13:50:02.246557] Alice Johnson <alice@example.com>: ABSENT - attended 4/5 = 80.0%
+[2026-10-13 13:50:06.777338] Bob Smith <bob@example.com>: ABSENT - attended 1/5 = 20.0% | URGENT: below the failure threshold - will fail this class
+[2026-10-13 13:50:16.640270] Charlie Davis <charlie@example.com>: PRESENT - attended 3/5 = 60.0% | WARNING: below the warning threshold - please be careful
+[2026-10-13 13:50:22.128042] Diana Prince <diana@example.com>: PRESENT - attended 4/5 = 80.0%
+[2026-10-13 13:50:25.215745] Ethan Cole <ethan@example.com>: PRESENT - attended 4/5 = 80.0%
+[2026-10-13 13:50:26.052360] Fatima Noor <fatima@example.com>: PRESENT - attended 1/5 = 20.0% | URGENT: below the failure threshold - will fail this class
+[2026-10-13 13:50:26.708038] George Mensah <george@example.com>: PRESENT - attended 3/5 = 60.0% | WARNING: below the warning threshold - please be careful
+[2026-10-13 13:50:27.376578] Hannah Kim <hannah@example.com>: PRESENT - attended 3/5 = 60.0% | WARNING: below the warning threshold - please be careful
+[2026-10-13 13:50:27.927197] Ibrahim Osei <ibrahim@example.com>: PRESENT - attended 4/5 = 80.0%
+[2026-10-13 13:50:28.334897] Jasmine Lee <jasmine@example.com>: PRESENT - attended 2/5 = 40.0% | URGENT: below the failure threshold - will fail this class
